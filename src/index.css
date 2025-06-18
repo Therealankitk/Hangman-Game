@@ -139,6 +139,25 @@ header > p{
   margin-right: 20px;
 }
 
+@media (max-width: 600px) {
+  .key {
+    flex: 1 0 18%;
+    min-width: 38px;
+    max-width: 50px;
+    font-size: 0.9rem;
+    padding: 10px 0;
+  }
+
+  .keyboard {
+    gap: 4px;
+  }
+
+  .spec1,
+  .spec2 {
+    margin: 0;
+  }
+}
+
 .hangman{
   height: 30vh;
 }
