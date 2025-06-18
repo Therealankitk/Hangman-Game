@@ -132,31 +132,21 @@ header > p{
 .keyboard > button.wrong{
   background-color: #ec5d49;
 }
-.spec1{
-  margin-left: 20px;
-}
-.spec2{
-  margin-right: 20px;
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
 }
 
 @media (max-width: 600px) {
-  .key {
-    flex: 1 0 18%;
-    min-width: 38px;
-    max-width: 50px;
-    font-size: 0.9rem;
-    padding: 10px 0;
+  .keyboard-row:nth-child(2) {
+    margin-left: 20px; 
   }
-
-  .keyboard {
-    gap: 4px;
-  }
-
-  .spec1,
-  .spec2 {
-    margin: 0;
+  .keyboard-row:nth-child(3) {
+    margin-left: 40px; 
   }
 }
+
 
 .hangman{
   height: 30vh;

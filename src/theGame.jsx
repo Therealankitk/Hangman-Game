@@ -135,38 +135,38 @@ export default function TheGame({ words, hintTrigger, lifeLost}) {
     }
 
 
-    const alphabet = "qwertyuiopasdfghjklzxcvbnm"
-    const keyboard = alphabet.split("").map((key, index) => {
-        const isGuessed = guess.includes(key)
-        const isCorrect = isGuessed && currentWord.includes(key)
-        const isWrong = isGuessed && !currentWord.includes(key)
+    const rows = [
+    "qwertyuiop",
+    "asdfghjkl",
+    "zxcvbnm"
+    ];
 
-        const className = clsx({
-            correct: isCorrect,
-            wrong: isWrong,
-            key: true
-        })
-        const className1 = clsx({
-            correct: isCorrect,
-            wrong: isWrong,
-            key: true,
-            spec1: true
-        })
-        const className2 = clsx({
-            correct: isCorrect,
-            wrong: isWrong,
-            key: true,
-            spec2: true
-        })
+    const keyboard = rows.map((row, rowIndex) => (
+    <div key={rowIndex} className="keyboard-row">
+        {row.split("").map((key, index) => {
+            const isGuessed = guess.includes(key);
+            const isCorrect = isGuessed && currentWord.includes(key);
+            const isWrong = isGuessed && !currentWord.includes(key);
 
-        if (key === "a") {
-            return <button key={index} className={className1} onClick={() => addGuess(key)} disabled={gameOver}>{key.toUpperCase()}</button>
-        } else if (key === "l") {
-            return <button key={index} className={className2} onClick={() => addGuess(key)} disabled={gameOver}>{key.toUpperCase()}</button>
-        } else {
-            return <button key={index} className={className} onClick={() => addGuess(key)} disabled={gameOver}>{key.toUpperCase()}</button>
-        }
-    })
+            const className = clsx({
+                correct: isCorrect,
+                wrong: isWrong,
+                key: true
+            });
+
+            return (
+                <button
+                    key={index}
+                    className={className}
+                    onClick={() => addGuess(key)}
+                    disabled={gameOver}
+                >
+                {key.toUpperCase()}
+                </button>
+            );
+        })}
+    </div>
+));
 
     async function onGameEnd(finalScore) {
         const qualifies = await qualifiesForTop3(finalScore);
