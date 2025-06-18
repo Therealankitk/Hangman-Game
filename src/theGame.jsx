@@ -179,7 +179,7 @@ export default function TheGame({ words, hintTrigger, lifeLost}) {
         if(takeInput){
             setTimeout(()=>{
                 window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-            },200)
+            },300)
         }
     },[takeInput])
 
