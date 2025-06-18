@@ -1,4 +1,4 @@
-# <img src="/src/assets/icon.png" alt="hangman" width="100"> Hangman Game
+# <img src="/src/assets/icon.png" alt="hangman" width="50"> Hangman Game
 
 A fun and interactive Hangman game built using **React** and **CSS**, featuring genre-based word guessing from live APIs. Challenge yourself in categories like movies, anime, countries, dramas, celebrities, and music!!
 
